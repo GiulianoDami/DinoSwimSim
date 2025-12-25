@@ -19,30 +19,34 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.beginPath();
         ctx.moveTo(50, 50);
         ctx.lineTo(150, 50);
-        ctx.stroke();
+        ctx.lineTo(150, 100);
+        ctx.lineTo(50, 100);
+        ctx.closePath();
+        ctx.fillStyle = 'green';
+        ctx.fill();
 
+        // Draw feet
         for (let i = 0; i < numberOfFeet; i++) {
             ctx.beginPath();
-            ctx.arc(100 + i * 50, 100, 10, 0, Math.PI * 2);
+            ctx.arc(50 + i * 100, 100, 10, 0, Math.PI * 2);
+            ctx.fillStyle = 'brown';
             ctx.fill();
         }
 
         ctx.restore();
     }
 
-    function startSimulation(event) {
+    function updateParameters(event) {
         event.preventDefault();
-        numberOfFeet = parseInt(document.getElementById('number-of-feet').value, 10);
+        numberOfFeet = parseInt(document.getElementById('feet-count').value, 10);
         gaitType = document.getElementById('gait-type').value;
         terrainType = document.getElementById('terrain-type').value;
         speed = parseFloat(document.getElementById('speed').value);
         size = parseFloat(document.getElementById('size').value);
-
         drawDinosaur();
-        // Additional logic for simulation based on parameters
     }
 
-    function resetSimulation() {
+    function resetParameters() {
         simulationForm.reset();
         numberOfFeet = 2;
         gaitType = 'alternating';
@@ -52,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
         drawDinosaur();
     }
 
-    simulationForm.addEventListener('submit', startSimulation);
-    resetButton.addEventListener('click', resetSimulation);
+    simulationForm.addEventListener('submit', updateParameters);
+    resetButton.addEventListener('click', resetParameters);
 
     drawDinosaur();
 });
