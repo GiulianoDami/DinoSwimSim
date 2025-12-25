@@ -2,37 +2,41 @@
   "dinosaurs": [
     {
       "name": "Tyrannosaurus Rex",
-      "feetCount": 2,
-      "fossilFootprints": [
-        {
-          "location": "Bolivia",
-          "depth": "10cm",
-          "spacing": "2m",
-          "gaitType": "bipedal"
-        }
-      ]
+      "feetCount": 4,
+      "gaitTypes": ["walk", "run"],
+      "terrainPreferences": ["hard ground"]
     },
     {
       "name": "Spinosaurus",
       "feetCount": 4,
-      "fossilFootprints": [
-        {
-          "location": "Bolivia",
-          "depth": "5cm",
-          "spacing": "1.5m",
-          "gaitType": "quadrupedal"
-        }
-      ]
-    }
-  ],
-  "terrainTypes": [
-    {
-      "type": "softMud",
-      "description": "Soft muddy terrain that provides little resistance but can sink easily."
+      "gaitTypes": ["walk", "swim"],
+      "terrainPreferences": ["soft mud", "hard ground"]
     },
     {
-      "type": "hardGround",
-      "description": "Hard ground that offers more stability but requires more force to move."
+      "name": "Baryonyx",
+      "feetCount": 4,
+      "gaitTypes": ["walk", "swim"],
+      "terrainPreferences": ["soft mud", "hard ground"]
+    }
+  ],
+  "footprints": [
+    {
+      "dinosaur": "Tyrannosaurus Rex",
+      "location": "Bolivia",
+      "size": "large",
+      "depth": "shallow"
+    },
+    {
+      "dinosaur": "Spinosaurus",
+      "location": "Bolivia",
+      "size": "medium",
+      "depth": "deep"
+    },
+    {
+      "dinosaur": "Baryonyx",
+      "location": "Bolivia",
+      "size": "small",
+      "depth": "moderate"
     }
   ]
 }
