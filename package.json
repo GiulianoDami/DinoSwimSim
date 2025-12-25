@@ -1,0 +1,24 @@
+{
+  "name": "dinoswimsim",
+  "version": "1.0.0",
+  "description": "A web application that simulates the swimming attempts of theropod dinosaurs based on fossil footprints.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "p5": "^1.4.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/dinoswimsim.git"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/dinoswimsim/issues"
+  },
+  "homepage": "https://github.com/yourusername/dinoswimsim#readme"
+}
