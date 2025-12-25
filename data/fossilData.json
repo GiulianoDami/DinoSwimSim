@@ -1,0 +1,38 @@
+{
+  "dinosaurs": [
+    {
+      "name": "Tyrannosaurus Rex",
+      "feetCount": 2,
+      "fossilFootprints": [
+        {
+          "location": "Bolivia",
+          "depth": "10cm",
+          "spacing": "2m",
+          "gaitType": "bipedal"
+        }
+      ]
+    },
+    {
+      "name": "Spinosaurus",
+      "feetCount": 4,
+      "fossilFootprints": [
+        {
+          "location": "Bolivia",
+          "depth": "5cm",
+          "spacing": "1.5m",
+          "gaitType": "quadrupedal"
+        }
+      ]
+    }
+  ],
+  "terrainTypes": [
+    {
+      "type": "softMud",
+      "description": "Soft muddy terrain that provides little resistance but can sink easily."
+    },
+    {
+      "type": "hardGround",
+      "description": "Hard ground that offers more stability but requires more force to move."
+    }
+  ]
+}
