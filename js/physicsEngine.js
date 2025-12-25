@@ -1,31 +1,29 @@
 function PhysicsEngine() {
     this.calculateMovement = function(feetCount, gaitType, terrainType, speed, size) {
         let movementPattern = {};
-        
+
+        // Basic calculations based on input parameters
+        if (terrainType === 'soft mud') {
+            movementPattern.slipFactor = 0.8;
+        } else if (terrainType === 'hard ground') {
+            movementPattern.slipFactor = 0.2;
+        }
+
         switch (gaitType) {
-            case 'gallop':
-                movementPattern.strideLength = 2 * size;
+            case 'alternating':
+                movementPattern.strideLength = size * 1.5;
                 break;
-            case 'walk':
-                movementPattern.strideLength = size;
+            case 'walking':
+                movementPattern.strideLength = size * 1.0;
                 break;
-            default:
-                movementPattern.strideLength = 1.5 * size;
-        }
-
-        switch (terrainType) {
-            case 'softMud':
-                movementPattern.resistance = 0.8;
-                break;
-            case 'hardGround':
-                movementPattern.resistance = 0.2;
+            case 'galloping':
+                movementPattern.strideLength = size * 2.0;
                 break;
             default:
-                movementPattern.resistance = 0.5;
+                movementPattern.strideLength = size * 1.5;
         }
 
-        movementPattern.speed = speed / movementPattern.resistance;
-        movementPattern.feetCount = feetCount;
+        movementPattern.timePerStride = 1 / speed;
 
         return movementPattern;
     };
